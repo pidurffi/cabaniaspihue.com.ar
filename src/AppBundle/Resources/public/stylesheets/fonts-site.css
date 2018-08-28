@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'icomoon-site';
+  src:  url('../fonts/icomoon-site.eot?61sypj');
+  src:  url('../fonts/icomoon-site.eot?61sypj#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon-site.ttf?61sypj') format('truetype'),
+    url('../fonts/icomoon-site.woff?61sypj') format('woff'),
+    url('../fonts/icomoon-site.svg?61sypj#icomoon-site') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-site-"], [class*=" icon-site-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon-site' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-site-arrow-left:before {
+  content: "\f104";
+}
+.icon-site-arrow-right:before {
+  content: "\f105";
+}
+.icon-site-facebook:before {
+  content: "\e900";
+}
+.icon-site-google-plus:before {
+  content: "\e901";
+}
+.icon-site-instagram:before {
+  content: "\e902";
+}
+.icon-site-cel:before {
+  content: "\e903";
+}
+.icon-site-tel:before {
+  content: "\e904";
+}
+.icon-site-twitter:before {
+  content: "\e905";
+}
+

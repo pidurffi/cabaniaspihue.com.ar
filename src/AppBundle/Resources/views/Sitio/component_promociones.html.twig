@@ -1,0 +1,36 @@
+
+	<section class="banners">
+		<div class="container">
+			<div class="row">
+				{% for promocion in promociones %}
+				<div class="col-sm-4">
+					<div class="item">
+						<h2>{{ promocion.nombre }}</h2>
+						<img src="{{ promocion.webPath }}" alt="">
+						<p>{{ promocion.descripcion|nl2br }}</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+{#
+
+	<section class="info">
+		<div class="container">
+			<div class="row">
+			{% for promocion in promociones %}
+				<div class="col-sm-4">
+					<div class="info-item">
+						<img src="{{ promocion.webPath|thumb(355,200) }}" alt="">
+						<h3>{{ promocion.nombre }}</h3>
+						<p>{{ promocion.descripcion|nl2br }}</p>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</section>
+
+#}

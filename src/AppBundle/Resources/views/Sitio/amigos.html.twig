@@ -1,0 +1,16 @@
+{% extends "AppBundle::Sitio/layout.html.twig" %}
+
+{% block slider_top %}
+{% endblock %}
+
+{% block content %}
+
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<h2>Nuestros amigos</h2>
+			{{ render(controller('AppBundle:Default:galeria',{galeria_id: 4})) }}
+		</div>
+	</section>
+
+
+{% endblock %}

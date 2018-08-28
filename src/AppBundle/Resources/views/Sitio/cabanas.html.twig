@@ -1,0 +1,49 @@
+{% extends "AppBundle::Sitio/layout.html.twig" %}
+
+{% block content %}
+
+	<section class="info" id="info">
+		<div class="container">
+			<h2>Cabañas para 4/5 personas</h2>
+			<p><b>Pasajeros:</b> Hasta 5 personas</p>
+			<p><b>Superficie:</b> 50m2</p>
+			<h3>Equipamiento planta baja</h3>
+			<ul class="int">
+				<li><span>&check;</span>Aire acondicionado split frío/calor</li>
+				<li><span>&check;</span>Cocina con horno tradicional</li>
+				<li><span>&check;</span>Heladera con freezer</li>
+				<li><span>&check;</span>Microondas</li>
+				<li><span>&check;</span>Cafetera eléctrica</li>
+				<li><span>&check;</span>Exprimidor eléctrico</li>
+				<li><span>&check;</span>Tostadora y vajilla completa</li>
+				<li><span>&check;</span>Living con futón 2 plazas (colchón a resorte)</li>
+				<li><span>&check;</span>TV LED 39''</li>
+				<li><span>&check;</span>DVD</li>
+				<li><span>&check;</span>Conexión WI-FI</li>
+				<li><span>&check;</span>Baño con ducha</li>
+				<li><span>&check;</span>2 paneles calefactores</li>
+				<li><span>&check;</span>Parrilla y espacio exterior individual</li>
+				<li><span>&check;</span>Estacionamiento</li>
+				<li><span>&check;</span>Ducha exterior</li>
+			</ul>
+			<h3>Equipamiento planta alta</h3>
+			<ul>
+				<li><span>&check;</span>1 dormitorio matrimonial con sommier</li>
+				<li><span>&check;</span>TV LCD 24''</li>
+				<li><span>&check;</span>Ventilador de techo</li>
+				<li><span>&check;</span>Puerta protectora para chicos en parte superior de la escalera</li>
+				<li><span>&check;</span>1 dormitorio con tres camas de 1 plaza (cucheta y marinera, con colchón sommier)</li>
+				<li><span>&check;</span>2 paneles calefactores, uno en cada dormitorio</li>
+				<li><span>&check;</span>Baño principal con bañera y secador de pelo</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<h2>Galería de fotos</h2>
+			{{ render(controller('AppBundle:Default:galeria',{galeria_id: 2})) }}
+		</div>
+	</section>
+
+{% endblock %}

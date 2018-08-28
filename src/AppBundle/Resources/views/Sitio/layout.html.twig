@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Nombre" content="Caba&ntilde;as Pi-Hue | Las Gaviotas" />
+	<meta name="DC.Title" content="Caba&ntilde;as en las Gaviotas | Caba&ntilde;as Pi-Hue | Alojamiento en Las Gaviotas" />
+	<meta http-equiv="title" content="Caba&ntilde;as en las Gaviotas | Caba&ntilde;as Pi-Hue | Alojamiento en Las Gaviotas" />
+	<meta name="description" content="En Las Gaviotas, a 20 metros del mar, Caba&ntilde;as Pi-Hue, atendido por sus due&ntilde;os. Caba&ntilde;as para 4/5 personas y Suites para 2/3 personas. Parrilas, horno de barro, servicio de playa " />
+	<meta name="abstract" content="En Las Gaviotas, a 20 metros del mar, Caba&ntilde;as Pi-Hue, atendido por sus due&ntilde;os. Caba&ntilde;as para 4/5 personas y Suites para 2/3 personas. Parrilas, horno de barro, servicio de playa." />
+	<meta name="keywords" content="Las Gaviotas, alojamiento, caba&ntilde;as, cabanas, alquiler, vacaciones, promociones" />
+	
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+	
+	<meta name="distribution" content="Global" />
+	<meta name="identifier-url" content="www.cabaniaspihue.com.ar" />
+	<meta name="rating" content="general" />
+	<meta name="author" content="www.lasgaviotas.travel" />
+	<meta name="reply-to" content="" />
+	<meta name="robots" content="all" />
+	<meta name="revisit-after" content="7 day" />
+	<meta name="DC.Language" scheme="RFC1766" content="Spanish" />
+
+<meta name="google-site-verification" content="-mvD0fvzOYjmJpP29vN7f9bXtwWKkEFo92Ed_S1Dw8Y" />
+	<!-- CSS -->
+	<link href="{{ asset('bundles/app/stylesheets/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('bundles/app/stylesheets/fonts.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('bundles/app/stylesheets/fonts-site.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('bundles/app/stylesheets/photoswipe.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('bundles/app/stylesheets/default-skin.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('bundles/app/stylesheets/owl.carousel.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('bundles/app/stylesheets/owl.transitions.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<!-- JS -->
+	<script type="text/javascript" src="{{ asset('bundles/app/js/jquery-2.2.3.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/app/js/functions.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/app/js/photoswipe.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/app/js/photoswipe-ui.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/app/js/owl.carousel.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/app/js/scroll.js') }}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+  function initialize() {
+	var isDraggable = $(document).width() > 480 ? true : false;  
+	var ispanControl = $(document).width() > 480 ? true : false;
+	var myLatLng = {lat: -37.340859, lng: -57.027926};
+	var marker = new google.maps.Marker({
+	   animation: google.maps.Animation.BOUNCE,
+	   position: myLatLng,
+	   title:"Cabañas Pi-Hue"
+	});
+	var mapCanvas = document.getElementById('map');
+	var mapOptions = {
+	  center: new google.maps.LatLng(-37.340859, -57.027926),
+	  zoom: 16,
+	  mapTypeControl: true,
+	  panControl:ispanControl,
+	  draggable: isDraggable,
+	  scaleControl: true,
+	  streetViewControl: true,
+	  rotateControl: true,
+	  scrollwheel: false,
+	  mapTypeId: google.maps.MapTypeId.SATELLITE
+	}
+	var map = new google.maps.Map(mapCanvas, mapOptions);
+	marker.setMap(map);
+  }
+  
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-43021299-1', 'cabaniaspihue.com.ar');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+
+<body>
+
+	<section class="intro" id="intro">
+		{% block slider_top %}
+		<div class="slider">
+			<img src="{{ asset('bundles/app/images/slider/001.jpg') }}" alt="">
+			<img src="{{ asset('bundles/app/images/slider/002.jpg') }}" alt="">
+		</div>
+		{% endblock %}
+		<div class="sub-header">
+			<div class="container">
+				<ul class="social">
+					<li><a href=""><span class="icon-site-facebook"></span></li></a>
+					<li><a href=""><span class="icon-site-twitter"></span></li></a>
+					<li><a href=""><span class="icon-site-google-plus"></span></li></a>
+					<li><a href=""><span class="icon-site-instagram"></span></li></a>
+				</ul>
+				<ul class="numbers">
+					<li><span class="icon-site-cel"></span> (02267) 15 41-9940</li>
+					<li><span class="icon-site-tel"></span> (02255) 46-8864</li>
+				</ul>
+			</div>
+		</div>
+		<header>
+			<div class="container">
+				<button class="hamburger hamburger--spin" type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+				<a href="{{ path('homepage') }}"><div class="logo"></div></a>
+				<nav>
+					<ul>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#intro"{% else %}href="{{ path('homepage') }}#intro"{% endif %}>Inicio</a></li>
+						<li><a href="{{ path('cabanas') }}">Cabañas</a></li>
+						<li><a href="{{ path('suites') }}">Suites</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#services"{% else %}href="{{ path('homepage') }}#services"{% endif %}>Servicios</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#gallery"{% else %}href="{{ path('homepage') }}#gallery"{% endif %}>Galería de fotos</a></li>
+						<li><a href="{{ path('amigos') }}">Nuestros amigos</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#ubicacion"{% else %}href="{{ path('homepage') }}#ubicacion"{% endif %}>Ubicación</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#contact"{% else %}href="{{ path('homepage') }}#contact"{% endif %}>Contacto</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+	</section>
+
+	{% block content %}
+	{% endblock %}
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="logo"></div>
+					<p>Calle 34 entre Mar Azul y playa<br>
+					        <strong>Las Gaviotas</strong> / Buenos Aires / Argentina<br>
+					        Teléfono: (02255) 46.8864<br>
+					        Celular: (02267) 15 41.9940<br>
+					        <a href="mailto:consultas@cabaniaspihue.com.ar">consultas@cabaniaspihue.com.ar</a></p>
+				</div>
+				<div class="col-sm-8">
+					<ul>
+						<li><a>Inicio</a></li>
+						<li><a>Cabañas</a></li>
+						<li><a>Suites</a></li>
+						<li><a>Servicios</a></li>
+						<li><a>Galería de fotos</a></li>
+						<li><a>Nuestros amigos</a></li>
+						<li><a>Ubicación</a></li>
+						<li><a>Contacto</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="pswp__bg"></div>
+		<div class="pswp__scroll-wrap">
+			<div class="pswp__container">
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+			</div>
+			<div class="pswp__ui pswp__ui--hidden">
+				<div class="pswp__top-bar">
+					<div class="pswp__counter"></div>
+					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+					<button class="pswp__button pswp__button--share" title="Share"></button>
+					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div>
+				</div>
+				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+				<div class="pswp__caption">
+					<div class="pswp__caption__center"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+			<div class="owl-gallery">
+				<div>
+					<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+						<div class="row">
+							{% set i=0 %}
+							{% for galeria in galerias %}
+						    {% for gal in galeria.galeria %}
+						    {% set i=i+1 %}
+							<figure class="{% if i==1 %}mobile-thumb{% endif %} col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+								<a href="{{ asset('/uploads/galerias/gallery/') }}{{ gal }}" itemprop="contentUrl" data-size="800x536">
+									<img src="{{ asset('/uploads/galerias/') }}{{ gal|gallery_thumb(350,235) }}" itemprop="thumbnail" alt="Image description" />
+									<span class="mobile-label">Ver galeria</span>
+								</a>
+							</figure>
+						    {% endfor %}
+						    {% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+{#
+				<div itemscope="" itemtype="http://schema.org/ImageGallery" class="picture">
+					<div class="row">
+						{% for galeria in galerias %}
+						{% for gal in galeria.galeria %}
+						<figure itemprop="associatedMedia" itemscope="" itemType="http://schema.org/ImageObject" class="col-sm-4">
+							<a href="{{ asset('/uploads/galerias/gallery/') }}{{ gal }}" itemprop="contentUrl1" data-size="800x600" data-index="0" class="thumb">
+								<img src="{{ asset('/uploads/galerias/') }}{{ gal|gallery_thumb(360,240) }}" itemprop="thumbnail">
+							</a>
+						</figure>
+						{% endfor %}
+						{% endfor %}
+					</div>
+				</div>
+#}

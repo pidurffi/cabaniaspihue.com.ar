@@ -1,0 +1,88 @@
+{% extends "AppBundle::Sitio/layout.html.twig" %}
+
+
+    {% block content %}
+    
+    {{ render(controller('AppBundle:Default:promociones')) }}
+	
+	<section class="welcome">
+		<div class="container">
+			<p>Cabañas y Suites a <b>20 metros del mar</b>, en las hermosas playas de <b>Las Gaviotas</b> y con nuestra atención personalizada.</p>
+			<p>Estamos todo el año, y en TEMPORADA ALTA, el horno de barro siempre calentito para sorprenderte con alguna pizza o nuestras inolvidables empanadas.</p>
+			<p>Pi-hue es un vocablo en lengua mapuche, que significa lugar de encuentro: con tu familia, amigos, pareja o simplemente con la naturaleza.</p>
+			<p>“Esta es nuestra casa el <b>Las Gaviotas</b> y queremos que vos te sientas como en la tuya”</p>
+			<p><i>Celina y Lucio</i></p>
+			<br>
+			<p>Ubicado entre Mar de las Pampas y Mar Azul es un balneario de 7 cuadras de ancho con inmensas y agrestes playas que hacen de <b>Las Gaviotas</b> el lugar ideal para tus vacaciones.</p>
+			<p>Si querés alejarte del cemento, del ruido y del tráfico, <b>Las Gaviotas</b> te espera para descansar y disfrutar.</p>
+		</div>
+	</section>
+
+	<section class="services" id="services">
+		<div class="container">
+			<h2>Servicios</h2>
+			<ul>
+                <li><i class="fas fa-check"></i>Atención personalizada de sus dueños</li>
+                <li><i class="fas fa-check"></i>Desayuno completo</li>
+                <li><i class="fas fa-check"></i>Limpieza</li>
+                <li><i class="fas fa-check"></i>Aire acondicionado split frío/calor</li>
+                <li><i class="fas fa-check"></i>Masaje de cortesía (temporada alta)</li>
+                <li><i class="fas fa-check"></i>Ropa de blanco (1&deg; calidad)</li>
+                <li><i class="fas fa-check"></i>Lavado de vajilla (sólo una vez al día)</li>
+                <li><i class="fas fa-check"></i>Reposeras y sombrillas de playa (temporada alta)</li>
+                <li><i class="fas fa-check"></i>Conexión WI-FI libre en todo el complejo</li>
+                <li><i class="fas fa-check"></i>TV LED</li>
+                <li><i class="fas fa-check"></i>DVD</li>
+                <li><i class="fas fa-check"></i>Calefacción en todos los ambientes</li>
+                <li><i class="fas fa-check"></i>Ventilador de techo</li>
+                <li><i class="fas fa-check"></i>Cuna y sillita para bebé</li>
+                <li><i class="fas fa-check"></i>Parrillas individuales</li>
+                <li><i class="fas fa-check"></i>Secador de cabello</li>
+                <li><i class="fas fa-check"></i>Heladera con freezer</li>
+                <li><i class="fas fa-check"></i>Cocina con horno</li>
+                <li><i class="fas fa-check"></i>Microondas</li>
+                <li><i class="fas fa-check"></i>Exprimidor eléctrico</li>
+                <li><i class="fas fa-check"></i>Vajilla completa</li>
+                <li><i class="fas fa-check"></i>Cafetera y tostadora eléctricas</li>
+                <li><i class="fas fa-check"></i>Estacionamiento</li>
+                <li><i class="fas fa-check"></i>Taller para chicos (temporada alta)</li>
+                <li><i class="fas fa-check"></i>Horno de barro (siempre te sorprende con algo rico en temporada alta)</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<h2>Galería de fotos</h2>
+			{{ render(controller('AppBundle:Default:galeria',{galeria_id: 1})) }}
+		</div>
+	</section>
+
+	<section class="map" id="ubicacion">
+		<div class="container">
+			<h2>Ubicación</h2>
+		</div>
+		<div id="map"></div>
+	</section>
+
+	<section class="contact" id="contact">
+		<div class="container">
+			<h2>Contacto</h2>
+			<form action="">
+				<div class="row">
+					<div class="col-sm-6">
+						<input type="text" placeholder="Nombre">
+						<input type="text" placeholder="Telefono">
+						<input type="text" placeholder="Email">
+					</div>
+					<div class="col-sm-6">
+						<textarea placeholder="Comentario"></textarea>
+					</div>
+					<div class="col-sm-12">
+						<a href="" class="send">Enviar</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock %}	

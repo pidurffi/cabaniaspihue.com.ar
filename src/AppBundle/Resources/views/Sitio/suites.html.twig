@@ -1,0 +1,44 @@
+{% extends "AppBundle::Sitio/layout.html.twig" %}
+
+{% block content %}
+
+	<section class="info" id="info">
+		<div class="container">
+			<h2>Suites para 2/3 personas</h2>
+			<p><b>Pasajeros:</b> Dos adultos y un niño hasta 2 años</p>
+			<p><b>Superficie:</b> 25m2</p>
+			<h3>Equipamiento</h3>
+			<ul class="int">
+				<li><span>&check;</span>Sommier de 2 plazas</li>
+				<li><span>&check;</span>Futón de una plaza</li>
+				<li><span>&check;</span>Aire acondicionado split frío/calor</li>
+				<li><span>&check;</span>TV lCD 32''</li>
+				<li><span>&check;</span>DVD</li>
+				<li><span>&check;</span>Parrillas en el jardín (una por cada suite)</li>
+				<li><span>&check;</span>Balcón individual (planta baja)</li>
+				<li><span>&check;</span>Espacio exterior individual (planta baja)</li>
+				<li><span>&check;</span>Estacionamiento</li>
+				<li><span>&check;</span>Conexión WI-FI</li>
+				<li><span>&check;</span>Ventilador de techo</li>
+				<li><span>&check;</span>2 paneles calefactores</li>
+				<li><span>&check;</span>Baño completo con bañera</li>
+				<li><span>&check;</span>Secado de cabello</li>
+				<li><span>&check;</span>Cocina con horno tradicional</li>
+				<li><span>&check;</span>Heladera</li>
+				<li><span>&check;</span>Microondas</li>
+				<li><span>&check;</span>Cafetera eléctrica</li>
+				<li><span>&check;</span>Exprimidor eléctrico</li>
+				<li><span>&check;</span>Tostadora</li>
+				<li><span>&check;</span>Vajilla completa</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<h2>Galería de fotos</h2>
+			{{ render(controller('AppBundle:Default:galeria',{galeria_id: 3})) }}
+		</div>
+	</section>
+
+{% endblock %}
