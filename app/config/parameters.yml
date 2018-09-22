@@ -2,20 +2,20 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: web451_pihue
-    database_user: web451_pihue
+    database_name: pihue_db
+    database_user: pihue_user
     database_password: KyIaRAKthdG4
 #    database_name: web451_mansion
 #    database_user: web451_mansion
 #    database_password: GogAtdH84dwu    
     mailer_transport: smtp
-    mailer_host: mail.lamansiondelbosque.com
-    mailer_user: webmaster+lamansiondelbosque.com
-    mailer_password: axwVT0R)E)5V
+    mailer_host: mail.cabaniaspihue.com.ar
+    mailer_user: consultas+cabaniaspihue.com.ar
+    mailer_password: cDqPfkVnsXaD
     mailer_port: 26
     secret: 681ec15606bf7b3b838c03ff3b86031b39cbeb7c
-    asunto_contacto: Contacto de _nombre_ desde www.lamansiondelbosque.com.ar
-    contacto_from: webmaster@lamansiondelbosque.com
+    asunto_contacto: Contacto de _nombre_ desde www.cabaniaspihue.com.ar
+    contacto_from: consultas@cabaniaspihue.com.ar
 #   contacto_to: gabryel@gmail.com
-    contacto_to: info@lamansiondelbosque.com
+    contacto_to: consultas@cabaniaspihue.com.ar
     

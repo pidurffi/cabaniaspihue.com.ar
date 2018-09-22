@@ -1,0 +1,5 @@
+[21-Sep-2018 12:22:16 America/Chicago] PHP Warning:  include_once(/home/pihue/public_html/../var/bootstrap.php.cache): failed to open stream: No such file or directory in /home/pihue/public_html/app.php on line 9
+[21-Sep-2018 12:22:16 America/Chicago] PHP Warning:  include_once(): Failed opening '/home/pihue/public_html/../var/bootstrap.php.cache' for inclusion (include_path='.:/opt/php54/lib/php') in /home/pihue/public_html/app.php on line 9
+[21-Sep-2018 12:22:16 America/Chicago] PHP Parse error:  syntax error, unexpected 'finally' (T_STRING), expecting catch (T_CATCH) in /home/pihue/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ContainerBuilder.php on line 436
+[21-Sep-2018 12:23:32 America/Chicago] PHP Warning:  include_once(/home/pihue/public_html/../var/bootstrap.php.cache): failed to open stream: No such file or directory in /home/pihue/public_html/app.php on line 9
+[21-Sep-2018 12:23:32 America/Chicago] PHP Warning:  include_once(): Failed opening '/home/pihue/public_html/../var/bootstrap.php.cache' for inclusion (include_path='.:/opt/php71/lib/php') in /home/pihue/public_html/app.php on line 9
