@@ -1,83 +1,1919 @@
-@import "compass/reset";
-@import "compass/css3";
-@import "_bootstrap";
-@import "_hamburgers";
+//colors
+$white: #fff;
+$black: #000000;
+$black_80: rgba(0, 0, 0, 0.8);
+$color_tall_poppy_approx: #be2227;
+$yellow: #ff0;
+$silver: #c0c0c0;
+$color_mine_shaft_approx: #333333;
+$color_alto_approx: #ddd;
+$color_gallery_approx: #eeeeee;
+$color_vanilla_approx: #d4bea6;
+$color_green_white_approx: #ece6dd;
+$color_cararra_approx: #f0ece9;
+$white_45: rgba(255, 255, 255, 0.45);
+$black_50: rgba(0, 0, 0, 0.5);
+$color_red_stage_80_approx: rgba(204, 102, 0, 0.8);
+$color_black_approx: #020202;
+$black_75: rgba(00,00,00,.75);
+$seashell: #f1f1f1;
+$color_cape_cod_approx: #424242;
 
-/*VARIABLES*/
-$animation: cubic-bezier(.25,.8,.25,1);
-$orange: #983500;
+//fonts
+$font_0: sans-serif;
+$font_1: monospace;
+$font_2: Helvetica Neue;
+$font_3: Helvetica;
+$font_4: Arial;
+$font_5: Open Sans;
 
-/*RESET*/
-a {
-	&:hover {
+//urls
+$url_0: url(../images/layout/logo.png);
+$url_1: url(../images/layout/logoW.png);
+$url_2: url(../images/layout/logo-playa.png);
+$url_3: url(../images/layout/logo-medano.png);
+$url_4: url(../images/layout/logo-bosque.png);
+$url_5: url(../images/layout/pinos.jpg);
+
+//@extend-elements
+//original selectors
+//html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+%extend_1 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+//original selectors
+//caption, th, td
+%extend_2 {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+//original selectors
+//sub, sup
+%extend_3 {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+//original selectors
+//button, input, optgroup, select, textarea
+%extend_4 {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+//original selectors
+//input, button, select, textarea
+%extend_5 {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+//original selectors
+//.sr-only-focusable:active, .sr-only-focusable:focus
+%extend_6 {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+}
+
+
+html {
+	@extend %extend_1;
+	line-height: 1;
+	font-family: $font_0;
+	font-size: 10px;
+	height: 100%;
+	input[type="button"] {
 		cursor: pointer;
 	}
-}
-nav {
-	ul {
-		&:hover {
-			cursor: default;
-		}
+	input[disabled] {
+		cursor: default;
 	}
 }
-
-img {
-	width: 100%;
-}
-
-section {
-	padding: 60px 0;
-	@media (max-width: 767px) {
-		padding: 20px 0;
-	}
-}
-
 body {
+	@extend %extend_1;
+	margin: 0;
+	font-family: $font_2, $font_3, $font_4, $font_0;
+	font-size: 14px;
+	line-height: 1.42857;
+	color: $color_mine_shaft_approx;
+	background-color: $white;
 	overflow-x: hidden;
-	font-family: 'Open Sans';
-	background-color: #dfd5b9;
+	font-family: $font_5;
+	background-color: $color_vanilla_approx;
+	height: 100%;
 	&.loading {
 		overflow-y: hidden;
 	}
 }
-
+div {
+	@extend %extend_1;
+}
+span {
+	@extend %extend_1;
+}
+applet {
+	@extend %extend_1;
+}
+object {
+	@extend %extend_1;
+}
+iframe {
+	@extend %extend_1;
+}
+h1 {
+	@extend %extend_1;
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+h2 {
+	@extend %extend_1;
+}
+h3 {
+	@extend %extend_1;
+}
+h4 {
+	@extend %extend_1;
+}
+h5 {
+	@extend %extend_1;
+}
+h6 {
+	@extend %extend_1;
+}
+p {
+	@extend %extend_1;
+}
+blockquote {
+	@extend %extend_1;
+	quotes: none;
+	&:before {
+		content: "";
+		content: none;
+	}
+	&:after {
+		content: "";
+		content: none;
+	}
+}
+pre {
+	@extend %extend_1;
+	overflow: auto;
+	font-family: $font_1, $font_1;
+	font-size: 1em;
+}
+a {
+	@extend %extend_1;
+	background-color: transparent;
+	text-decoration: none;
+	img {
+		border: none;
+	}
+	&:active {
+		outline: 0;
+	}
+	&:hover {
+		outline: 0;
+		cursor: pointer;
+	}
+}
+abbr {
+	@extend %extend_1;
+}
+acronym {
+	@extend %extend_1;
+}
+address {
+	@extend %extend_1;
+}
+big {
+	@extend %extend_1;
+}
+cite {
+	@extend %extend_1;
+}
+code {
+	@extend %extend_1;
+	font-family: $font_1, $font_1;
+	font-size: 1em;
+}
+del {
+	@extend %extend_1;
+}
+dfn {
+	@extend %extend_1;
+	font-style: italic;
+}
+em {
+	@extend %extend_1;
+}
+img {
+	@extend %extend_1;
+	border: 0;
+	vertical-align: middle;
+	width: 100%;
+}
+ins {
+	@extend %extend_1;
+}
+kbd {
+	@extend %extend_1;
+	font-family: $font_1, $font_1;
+	font-size: 1em;
+}
+q {
+	@extend %extend_1;
+	quotes: none;
+	&:before {
+		content: "";
+		content: none;
+	}
+	&:after {
+		content: "";
+		content: none;
+	}
+}
+s {
+	@extend %extend_1;
+}
+samp {
+	@extend %extend_1;
+	font-family: $font_1, $font_1;
+	font-size: 1em;
+}
+small {
+	@extend %extend_1;
+	font-size: 80%;
+}
+strike {
+	@extend %extend_1;
+}
+strong {
+	@extend %extend_1;
+	font-weight: bold;
+}
+sub {
+	@extend %extend_1;
+	@extend %extend_3;
+	bottom: -0.25em;
+}
+sup {
+	@extend %extend_1;
+	@extend %extend_3;
+	top: -0.5em;
+}
+tt {
+	@extend %extend_1;
+}
+var {
+	@extend %extend_1;
+}
+b {
+	@extend %extend_1;
+	font-weight: bold;
+}
+u {
+	@extend %extend_1;
+}
+i {
+	@extend %extend_1;
+}
+center {
+	@extend %extend_1;
+}
+dl {
+	@extend %extend_1;
+}
+dt {
+	@extend %extend_1;
+}
+dd {
+	@extend %extend_1;
+}
+ol {
+	@extend %extend_1;
+	list-style: none;
+}
+ul {
+	@extend %extend_1;
+	list-style: none;
+}
+li {
+	@extend %extend_1;
+}
+fieldset {
+	@extend %extend_1;
+	border: 1px solid $silver;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+form {
+	@extend %extend_1;
+}
+label {
+	@extend %extend_1;
+}
+legend {
+	@extend %extend_1;
+	border: 0;
+	padding: 0;
+}
+table {
+	@extend %extend_1;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+caption {
+	@extend %extend_1;
+	@extend %extend_2;
+}
+tbody {
+	@extend %extend_1;
+}
+tfoot {
+	@extend %extend_1;
+}
+thead {
+	@extend %extend_1;
+}
+tr {
+	@extend %extend_1;
+}
+th {
+	@extend %extend_1;
+	@extend %extend_2;
+	padding: 0;
+}
+td {
+	@extend %extend_1;
+	@extend %extend_2;
+	padding: 0;
+}
+article {
+	@extend %extend_1;
+	display: block;
+}
+aside {
+	@extend %extend_1;
+	display: block;
+}
+canvas {
+	@extend %extend_1;
+	display: inline-block;
+	vertical-align: baseline;
+}
+details {
+	@extend %extend_1;
+	display: block;
+}
+embed {
+	@extend %extend_1;
+}
+figure {
+	@extend %extend_1;
+	display: block;
+	margin: 1em 40px;
+	margin: 0;
+}
+figcaption {
+	@extend %extend_1;
+	display: block;
+}
+footer {
+	@extend %extend_1;
+	display: block;
+	padding: 40px 0;
+	background-color: $color_cararra_approx;
+	p {
+		margin-top: 20px;
+		color: $color_cape_cod_approx;
+	}
+	ul {		
+		li {
+			display: inline-block;
+			margin-left: 10px;
+			a {
+				text-transform: uppercase;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+				color: $color_cape_cod_approx;
+				&:hover {
+					color: $color_tall_poppy_approx;
+				}
+			}
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		&.social {
+			margin-top: 20px;
+			li {
+				display: inline-block;
+				background-color: #000;
+				border-radius: 4px;
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 30px;
+					height: 30px;
+					i {
+						font-size: 20px;
+						color: $color_cararra_approx;
+					}
+				}
+			}
+		}
+	} 
+}
+header {
+	@extend %extend_1;
+	display: block;
+}
+hgroup {
+	@extend %extend_1;
+	display: block;
+}
+menu {
+	@extend %extend_1;
+	display: block;
+}
+nav {
+	@extend %extend_1;
+	display: block;
+	ul:hover {
+		cursor: default;
+	}
+}
+output {
+	@extend %extend_1;
+}
+ruby {
+	@extend %extend_1;
+}
+section {
+	@extend %extend_1;
+	display: block;
+	padding: 60px 0;
+}
+summary {
+	@extend %extend_1;
+	display: block;
+}
+time {
+	@extend %extend_1;
+}
+mark {
+	@extend %extend_1;
+	background: $yellow;
+	color: $black;
+}
+audio {
+	@extend %extend_1;
+	display: inline-block;
+	vertical-align: baseline;
+	&:not([controls]) {
+		display: none;
+		height: 0;
+	}
+}
+video {
+	@extend %extend_1;
+	display: inline-block;
+	vertical-align: baseline;
+}
+main {
+	display: block;
+}
+progress {
+	display: inline-block;
+	vertical-align: baseline;
+}
+[hidden] {
+	display: none;
+}
+template {
+	display: none;
+}
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+hr {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: content-box;
+	height: 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid $color_gallery_approx;
+}
 button {
+	@extend %extend_4;
+	overflow: visible;
+	text-transform: none;
+	cursor: pointer;
+	@extend %extend_5;
 	&:focus {
 		outline: 0;
 	}
 }
-
-body, html {
-	height: 100%;
+input {
+	@extend %extend_4;
+	line-height: normal;
+	@extend %extend_5;
 }
-
-@include keyframes(breath) {
+optgroup {
+	@extend %extend_4;
+	font-weight: bold;
+}
+select {
+	@extend %extend_4;
+	text-transform: none;
+	@extend %extend_5;
+}
+textarea {
+	@extend %extend_4;
+	overflow: auto;
+	@extend %extend_5;
+}
+input[type="reset"] {
+	cursor: pointer;
+}
+input[type="submit"] {
+	cursor: pointer;
+}
+button[disabled] {
+	cursor: default;
+}
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+input[type="checkbox"] {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	padding: 0;
+}
+input[type="radio"] {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button {
+	height: auto;
+}
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+input[type="search"] {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button {
+}
+input[type="search"]::-webkit-search-decoration {
+}
+* {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	&:before {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+	}
+	&:after {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+	}
+}
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.img-rounded {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 6px;
+}
+.img-thumbnail {
+	padding: 4px;
+	line-height: 1.42857;
+	background-color: $white;
+	border: 1px solid $color_alto_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+.img-circle {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50%;
+}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+.sr-only-focusable {
+	&:active {
+		@extend %extend_6;
+	}
+	&:focus {
+		@extend %extend_6;
+	}
+}
+[role="button"] {
+	cursor: pointer;
+}
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	&:before {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+@media(min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+	.col-sm-1 {
+		float: left;
+		width: 8.33333%;
+	}
+	.col-sm-2 {
+		float: left;
+		width: 16.66667%;
+	}
+	.col-sm-3 {
+		float: left;
+		width: 25%;
+	}
+	.col-sm-4 {
+		float: left;
+		width: 33.33333%;
+	}
+	.col-sm-5 {
+		float: left;
+		width: 41.66667%;
+	}
+	.col-sm-6 {
+		float: left;
+		width: 50%;
+	}
+	.col-sm-7 {
+		float: left;
+		width: 58.33333%;
+	}
+	.col-sm-8 {
+		float: left;
+		width: 66.66667%;
+	}
+	.col-sm-9 {
+		float: left;
+		width: 75%;
+	}
+	.col-sm-10 {
+		float: left;
+		width: 83.33333%;
+	}
+	.col-sm-11 {
+		float: left;
+		width: 91.66667%;
+	}
+	.col-sm-12 {
+		float: left;
+		width: 100%;
+	}
+	.col-sm-pull-0 {
+		right: auto;
+	}
+	.col-sm-pull-1 {
+		right: 8.33333%;
+	}
+	.col-sm-pull-2 {
+		right: 16.66667%;
+	}
+	.col-sm-pull-3 {
+		right: 25%;
+	}
+	.col-sm-pull-4 {
+		right: 33.33333%;
+	}
+	.col-sm-pull-5 {
+		right: 41.66667%;
+	}
+	.col-sm-pull-6 {
+		right: 50%;
+	}
+	.col-sm-pull-7 {
+		right: 58.33333%;
+	}
+	.col-sm-pull-8 {
+		right: 66.66667%;
+	}
+	.col-sm-pull-9 {
+		right: 75%;
+	}
+	.col-sm-pull-10 {
+		right: 83.33333%;
+	}
+	.col-sm-pull-11 {
+		right: 91.66667%;
+	}
+	.col-sm-pull-12 {
+		right: 100%;
+	}
+	.col-sm-push-0 {
+		left: auto;
+	}
+	.col-sm-push-1 {
+		left: 8.33333%;
+	}
+	.col-sm-push-2 {
+		left: 16.66667%;
+	}
+	.col-sm-push-3 {
+		left: 25%;
+	}
+	.col-sm-push-4 {
+		left: 33.33333%;
+	}
+	.col-sm-push-5 {
+		left: 41.66667%;
+	}
+	.col-sm-push-6 {
+		left: 50%;
+	}
+	.col-sm-push-7 {
+		left: 58.33333%;
+	}
+	.col-sm-push-8 {
+		left: 66.66667%;
+	}
+	.col-sm-push-9 {
+		left: 75%;
+	}
+	.col-sm-push-10 {
+		left: 83.33333%;
+	}
+	.col-sm-push-11 {
+		left: 91.66667%;
+	}
+	.col-sm-push-12 {
+		left: 100%;
+	}
+	.col-sm-offset-0 {
+		margin-left: 0;
+	}
+	.col-sm-offset-1 {
+		margin-left: 8.33333%;
+	}
+	.col-sm-offset-2 {
+		margin-left: 16.66667%;
+	}
+	.col-sm-offset-3 {
+		margin-left: 25%;
+	}
+	.col-sm-offset-4 {
+		margin-left: 33.33333%;
+	}
+	.col-sm-offset-5 {
+		margin-left: 41.66667%;
+	}
+	.col-sm-offset-6 {
+		margin-left: 50%;
+	}
+	.col-sm-offset-7 {
+		margin-left: 58.33333%;
+	}
+	.col-sm-offset-8 {
+		margin-left: 66.66667%;
+	}
+	.col-sm-offset-9 {
+		margin-left: 75%;
+	}
+	.col-sm-offset-10 {
+		margin-left: 83.33333%;
+	}
+	.col-sm-offset-11 {
+		margin-left: 91.66667%;
+	}
+	.col-sm-offset-12 {
+		margin-left: 100%;
+	}
+}
+@media(min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+	.col-md-1 {
+		float: left;
+		width: 8.33333%;
+	}
+	.col-md-2 {
+		float: left;
+		width: 16.66667%;
+	}
+	.col-md-3 {
+		float: left;
+		width: 25%;
+	}
+	.col-md-4 {
+		float: left;
+		width: 33.33333%;
+	}
+	.col-md-5 {
+		float: left;
+		width: 41.66667%;
+	}
+	.col-md-6 {
+		float: left;
+		width: 50%;
+	}
+	.col-md-7 {
+		float: left;
+		width: 58.33333%;
+	}
+	.col-md-8 {
+		float: left;
+		width: 66.66667%;
+	}
+	.col-md-9 {
+		float: left;
+		width: 75%;
+	}
+	.col-md-10 {
+		float: left;
+		width: 83.33333%;
+	}
+	.col-md-11 {
+		float: left;
+		width: 91.66667%;
+	}
+	.col-md-12 {
+		float: left;
+		width: 100%;
+	}
+	.col-md-pull-0 {
+		right: auto;
+	}
+	.col-md-pull-1 {
+		right: 8.33333%;
+	}
+	.col-md-pull-2 {
+		right: 16.66667%;
+	}
+	.col-md-pull-3 {
+		right: 25%;
+	}
+	.col-md-pull-4 {
+		right: 33.33333%;
+	}
+	.col-md-pull-5 {
+		right: 41.66667%;
+	}
+	.col-md-pull-6 {
+		right: 50%;
+	}
+	.col-md-pull-7 {
+		right: 58.33333%;
+	}
+	.col-md-pull-8 {
+		right: 66.66667%;
+	}
+	.col-md-pull-9 {
+		right: 75%;
+	}
+	.col-md-pull-10 {
+		right: 83.33333%;
+	}
+	.col-md-pull-11 {
+		right: 91.66667%;
+	}
+	.col-md-pull-12 {
+		right: 100%;
+	}
+	.col-md-push-0 {
+		left: auto;
+	}
+	.col-md-push-1 {
+		left: 8.33333%;
+	}
+	.col-md-push-2 {
+		left: 16.66667%;
+	}
+	.col-md-push-3 {
+		left: 25%;
+	}
+	.col-md-push-4 {
+		left: 33.33333%;
+	}
+	.col-md-push-5 {
+		left: 41.66667%;
+	}
+	.col-md-push-6 {
+		left: 50%;
+	}
+	.col-md-push-7 {
+		left: 58.33333%;
+	}
+	.col-md-push-8 {
+		left: 66.66667%;
+	}
+	.col-md-push-9 {
+		left: 75%;
+	}
+	.col-md-push-10 {
+		left: 83.33333%;
+	}
+	.col-md-push-11 {
+		left: 91.66667%;
+	}
+	.col-md-push-12 {
+		left: 100%;
+	}
+	.col-md-offset-0 {
+		margin-left: 0;
+	}
+	.col-md-offset-1 {
+		margin-left: 8.33333%;
+	}
+	.col-md-offset-2 {
+		margin-left: 16.66667%;
+	}
+	.col-md-offset-3 {
+		margin-left: 25%;
+	}
+	.col-md-offset-4 {
+		margin-left: 33.33333%;
+	}
+	.col-md-offset-5 {
+		margin-left: 41.66667%;
+	}
+	.col-md-offset-6 {
+		margin-left: 50%;
+	}
+	.col-md-offset-7 {
+		margin-left: 58.33333%;
+	}
+	.col-md-offset-8 {
+		margin-left: 66.66667%;
+	}
+	.col-md-offset-9 {
+		margin-left: 75%;
+	}
+	.col-md-offset-10 {
+		margin-left: 83.33333%;
+	}
+	.col-md-offset-11 {
+		margin-left: 91.66667%;
+	}
+	.col-md-offset-12 {
+		margin-left: 100%;
+	}
+}
+@media(min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+	.col-lg-1 {
+		float: left;
+		width: 8.33333%;
+	}
+	.col-lg-2 {
+		float: left;
+		width: 16.66667%;
+	}
+	.col-lg-3 {
+		float: left;
+		width: 25%;
+	}
+	.col-lg-4 {
+		float: left;
+		width: 33.33333%;
+	}
+	.col-lg-5 {
+		float: left;
+		width: 41.66667%;
+	}
+	.col-lg-6 {
+		float: left;
+		width: 50%;
+	}
+	.col-lg-7 {
+		float: left;
+		width: 58.33333%;
+	}
+	.col-lg-8 {
+		float: left;
+		width: 66.66667%;
+	}
+	.col-lg-9 {
+		float: left;
+		width: 75%;
+	}
+	.col-lg-10 {
+		float: left;
+		width: 83.33333%;
+	}
+	.col-lg-11 {
+		float: left;
+		width: 91.66667%;
+	}
+	.col-lg-12 {
+		float: left;
+		width: 100%;
+	}
+	.col-lg-pull-0 {
+		right: auto;
+	}
+	.col-lg-pull-1 {
+		right: 8.33333%;
+	}
+	.col-lg-pull-2 {
+		right: 16.66667%;
+	}
+	.col-lg-pull-3 {
+		right: 25%;
+	}
+	.col-lg-pull-4 {
+		right: 33.33333%;
+	}
+	.col-lg-pull-5 {
+		right: 41.66667%;
+	}
+	.col-lg-pull-6 {
+		right: 50%;
+	}
+	.col-lg-pull-7 {
+		right: 58.33333%;
+	}
+	.col-lg-pull-8 {
+		right: 66.66667%;
+	}
+	.col-lg-pull-9 {
+		right: 75%;
+	}
+	.col-lg-pull-10 {
+		right: 83.33333%;
+	}
+	.col-lg-pull-11 {
+		right: 91.66667%;
+	}
+	.col-lg-pull-12 {
+		right: 100%;
+	}
+	.col-lg-push-0 {
+		left: auto;
+	}
+	.col-lg-push-1 {
+		left: 8.33333%;
+	}
+	.col-lg-push-2 {
+		left: 16.66667%;
+	}
+	.col-lg-push-3 {
+		left: 25%;
+	}
+	.col-lg-push-4 {
+		left: 33.33333%;
+	}
+	.col-lg-push-5 {
+		left: 41.66667%;
+	}
+	.col-lg-push-6 {
+		left: 50%;
+	}
+	.col-lg-push-7 {
+		left: 58.33333%;
+	}
+	.col-lg-push-8 {
+		left: 66.66667%;
+	}
+	.col-lg-push-9 {
+		left: 75%;
+	}
+	.col-lg-push-10 {
+		left: 83.33333%;
+	}
+	.col-lg-push-11 {
+		left: 91.66667%;
+	}
+	.col-lg-push-12 {
+		left: 100%;
+	}
+	.col-lg-offset-0 {
+		margin-left: 0;
+	}
+	.col-lg-offset-1 {
+		margin-left: 8.33333%;
+	}
+	.col-lg-offset-2 {
+		margin-left: 16.66667%;
+	}
+	.col-lg-offset-3 {
+		margin-left: 25%;
+	}
+	.col-lg-offset-4 {
+		margin-left: 33.33333%;
+	}
+	.col-lg-offset-5 {
+		margin-left: 41.66667%;
+	}
+	.col-lg-offset-6 {
+		margin-left: 50%;
+	}
+	.col-lg-offset-7 {
+		margin-left: 58.33333%;
+	}
+	.col-lg-offset-8 {
+		margin-left: 66.66667%;
+	}
+	.col-lg-offset-9 {
+		margin-left: 75%;
+	}
+	.col-lg-offset-10 {
+		margin-left: 83.33333%;
+	}
+	.col-lg-offset-11 {
+		margin-left: 91.66667%;
+	}
+	.col-lg-offset-12 {
+		margin-left: 100%;
+	}
+}
+.container-fluid {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	&:before {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+.row {
+	margin-left: -15px;
+	margin-right: -15px;
+	&:before {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+.col-xs-1 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 8.33333%;
+}
+.col-sm-1 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-1 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-1 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-2 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 16.66667%;
+}
+.col-sm-2 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-2 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-2 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-3 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 25%;
+}
+.col-sm-3 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-3 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-3 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-4 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 33.33333%;
+}
+.col-sm-4 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-4 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-4 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 41.66667%;
+}
+.col-sm-5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-6 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 50%;
+}
+.col-sm-6 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-6 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-6 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-7 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 58.33333%;
+}
+.col-sm-7 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-7 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-7 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-8 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 66.66667%;
+}
+.col-sm-8 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-8 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-8 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-9 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 75%;
+}
+.col-sm-9 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-9 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-9 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-10 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 83.33333%;
+}
+.col-sm-10 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-10 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-10 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-11 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 91.66667%;
+}
+.col-sm-11 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-11 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-11 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-12 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+	width: 100%;
+}
+.col-sm-12 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-md-12 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-lg-12 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-xs-pull-0 {
+	right: auto;
+}
+.col-xs-pull-1 {
+	right: 8.33333%;
+}
+.col-xs-pull-2 {
+	right: 16.66667%;
+}
+.col-xs-pull-3 {
+	right: 25%;
+}
+.col-xs-pull-4 {
+	right: 33.33333%;
+}
+.col-xs-pull-5 {
+	right: 41.66667%;
+}
+.col-xs-pull-6 {
+	right: 50%;
+}
+.col-xs-pull-7 {
+	right: 58.33333%;
+}
+.col-xs-pull-8 {
+	right: 66.66667%;
+}
+.col-xs-pull-9 {
+	right: 75%;
+}
+.col-xs-pull-10 {
+	right: 83.33333%;
+}
+.col-xs-pull-11 {
+	right: 91.66667%;
+}
+.col-xs-pull-12 {
+	right: 100%;
+}
+.col-xs-push-0 {
+	left: auto;
+}
+.col-xs-push-1 {
+	left: 8.33333%;
+}
+.col-xs-push-2 {
+	left: 16.66667%;
+}
+.col-xs-push-3 {
+	left: 25%;
+}
+.col-xs-push-4 {
+	left: 33.33333%;
+}
+.col-xs-push-5 {
+	left: 41.66667%;
+}
+.col-xs-push-6 {
+	left: 50%;
+}
+.col-xs-push-7 {
+	left: 58.33333%;
+}
+.col-xs-push-8 {
+	left: 66.66667%;
+}
+.col-xs-push-9 {
+	left: 75%;
+}
+.col-xs-push-10 {
+	left: 83.33333%;
+}
+.col-xs-push-11 {
+	left: 91.66667%;
+}
+.col-xs-push-12 {
+	left: 100%;
+}
+.col-xs-offset-0 {
+	margin-left: 0;
+}
+.col-xs-offset-1 {
+	margin-left: 8.33333%;
+}
+.col-xs-offset-2 {
+	margin-left: 16.66667%;
+}
+.col-xs-offset-3 {
+	margin-left: 25%;
+}
+.col-xs-offset-4 {
+	margin-left: 33.33333%;
+}
+.col-xs-offset-5 {
+	margin-left: 41.66667%;
+}
+.col-xs-offset-6 {
+	margin-left: 50%;
+}
+.col-xs-offset-7 {
+	margin-left: 58.33333%;
+}
+.col-xs-offset-8 {
+	margin-left: 66.66667%;
+}
+.col-xs-offset-9 {
+	margin-left: 75%;
+}
+.col-xs-offset-10 {
+	margin-left: 83.33333%;
+}
+.col-xs-offset-11 {
+	margin-left: 91.66667%;
+}
+.col-xs-offset-12 {
+	margin-left: 100%;
+}
+.hamburger {
+	padding: 15px;
+	display: inline-block;
+	cursor: pointer;
+	//Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+	transition-property: opacity, filter;
+	//Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+	transition-duration: 0.15s;
+	//Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+}
+.hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+	width: 40px;
+	height: 4px;
+	background-color: $white;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	position: absolute;
+	//Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+	transition-property: transform;
+	//Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+	transition-duration: 0.15s;
+	//Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+	transition-timing-function: ease;
+}
+.hamburger-inner::before {
+	width: 40px;
+	height: 4px;
+	background-color: $white;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	position: absolute;
+	//Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+	transition-property: transform;
+	//Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+	transition-duration: 0.15s;
+	//Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+	transition-timing-function: ease;
+	content: "";
+	display: block;
+	top: -10px;
+}
+.hamburger-inner::after {
+	width: 40px;
+	height: 4px;
+	background-color: $white;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	position: absolute;
+	//Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+	transition-property: transform;
+	//Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+	transition-duration: 0.15s;
+	//Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+	transition-timing-function: ease;
+	content: "";
+	display: block;
+	bottom: -10px;
+}
+.hamburger--spin {
+	.hamburger-inner {
+		//Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+		transition-duration: 0.3s;
+		//Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	.hamburger-inner::before {
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in;
+	}
+	.hamburger-inner::after {
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	&.is-active {
+		z-index: 40;
+		.hamburger-inner {
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: rotate(225deg);
+			//Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
+			transition-delay: 0.14s;
+			//Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		}
+		.hamburger-inner::before {
+			top: 0;
+			opacity: 0;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
+		}
+		.hamburger-inner::after {
+			bottom: 0;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: rotate(-90deg);
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+		}
+	}
+}
+@media(max-width: 767px) {
+	section {
+		padding: 20px 0;
+	}
+	.sub-header {
+		display: none;
+	}
+	.intro {
+		.slider {
+			display: none;
+		}
+		.intro-links {
+			display: none;
+		}
+	}
+	.banners {
+		margin-top: 30px;
+		text-align: center;
+		.item {
+			margin-top: 40px;
+		}
+	}
+	footer {
+		text-align: center;
+		ul {
+			margin-top: 40px;
+			float: none;
+			text-align: center;
+		}
+	}
+	.info {
+		margin-top: 70px;
+	}
+	.gallery {
+		ul li {
+			float: none;
+			width: 100%;
+			padding: 5px;
+		}
+		.my-gallery figure {
+			display: none;
+			padding: 0;
+			&.mobile-thumb {
+				display: block;
+				width: 100%;
+				.mobile-label {
+					position: absolute;
+					top: 50%;
+					display: block;
+					margin-top: -20px;
+					padding: 10px;
+					width: 100%;
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 20px;
+					color: $color_tall_poppy_approx;
+					text-transform: uppercase;
+					text-align: center;
+					background-color: $black_80;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	.contact form textarea {
+		margin-top: 20px;
+	}
+}
+@-moz-keyframes breath {
 	0% {
-		@include transform(scale(1));
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
 	}
 	25% {
-		@include transform(scale(1.2));
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.2);
 	}
 	50% {
-		@include transform(scale(1));
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
 	}
 	75% {
-		@include transform(scale(1.2));
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.2);
 	}
 	100% {
-		@include transform(scale(1));
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
 	}
 }
-
-@include keyframes(sticky-header) {
+@-webkit-keyframes breath {
 	0% {
-		@include transform(translate(0, -56px));
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
+	}
+	25% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.2);
+	}
+	50% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
+	}
+	75% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.2);
 	}
 	100% {
-		@include transform(translate(0, 0));
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
 	}
 }
-
+@keyframes breath {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
+	}
+	25% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.2);
+	}
+	50% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
+	}
+	75% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.2);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
+	}
+}
+@-moz-keyframes sticky-header {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, -56px);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 0);
+	}
+}
+@-webkit-keyframes sticky-header {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, -56px);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 0);
+	}
+}
+@keyframes sticky-header {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, -56px);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 0);
+	}
+}
 .loading-screen {
 	position: fixed;
 	top: 0;
@@ -85,46 +1921,46 @@ body, html {
 	left: 0;
 	right: 0;
 	height: 100%;
-	background-color: #ece6dd;
+	background-color: $color_green_white_approx;
 	z-index: 9999;
-	@include transition(visibility .5s $animation, opacity .5s $animation);
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: visibility 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 	.logo {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		margin: -16px 0 0 -88px;
-		background-image: url(../images/layout/logo.png);
-		@include animation(breath 2s ease-out infinite normal);
+		background-image: $url_0;
+		animation: breath 2s ease-out infinite normal;
 	}
 	&.off {
 		visibility: hidden;
 		opacity: 0;
 	}
 }
-
 .sub-header {
 	position: relative;
 	height: 43px;
 	line-height: 30px;
-	border-top: 3px solid #983500;
-	background-color: #dddbd3;
+	border-top: 3px solid $color_tall_poppy_approx;
+	background-color: $color_cararra_approx;
 	.social {
 		position: relative;
 		top: 8px;
 		float: left;
 		li {
-			display: inline;
+			display: inline-block;
 			margin-left: 20px;
 			a {
-				display: inline-block;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				width: 22px;
 				height: 23px;
 				text-align: center;
 				background-color: #000;
-				@include border-radius(4px);
-				span {
-					position: relative;
-					top: -2px;
+				border-radius: 4px;
+				i {
 					color: #fff;
 				}
 			}
@@ -142,7 +1978,7 @@ body, html {
 			margin-left: 20px;
 			font-size: 12px;
 			font-weight: 600;
-			color: #000;
+			color: $black;
 			span {
 				margin-right: 5px;
 				font-size: 14px;
@@ -155,35 +1991,89 @@ body, html {
 	&.sticky {
 		margin-bottom: 56px;
 	}
-	@media (max-width: 767px) {
-		display: none;
-	}
 }
-
 .logo {
 	display: inline-block;
 	width: 156px;
 	height: 61px;
-	background-image: url(../images/layout/logo.png);
+	background-image: $url_0;
 	background-repeat: no-repeat;
 	background-size: contain;
-	@media (max-width: 991px) {
-		background-image: url(../images/layout/logoW.png);
-	}
 	&.playa {
 		width: 196px;
-		background-image: url(../images/layout/logo-playa.png);
+		background-image: $url_2;
 	}
 	&.medano {
 		width: 235px;
-		background-image: url(../images/layout/logo-medano.png);
+		background-image: $url_3;
 	}
 	&.bosque {
 		width: 229px;
-		background-image: url(../images/layout/logo-bosque.png);
+		background-image: $url_4;
 	}
 }
-
+@media(max-width: 991px) {
+	header .logo {
+		background-image: $url_1;
+	}
+	.intro header {
+		background-color: $black_80;
+		.container {
+			.hamburger {
+				visibility: visible;
+				opacity: 1;
+				z-index: 120;
+			}
+			nav {
+				display: table;
+				visibility: hidden;
+				opacity: 0;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				background-color: $black;
+				ul {
+					display: table-cell;
+					vertical-align: middle;
+					li {
+						display: block;
+						margin-left: 0;
+						a {
+							color: $white;
+							font-size: 35px;
+						}
+						&.common {
+							margin-top: 20px;
+							margin-left: 0;
+						}
+					}
+				}
+				&.active {
+					visibility: visible;
+					opacity: 1;
+					z-index: 110;
+				}
+			}
+		}
+	}
+	footer ul {
+		float: right;
+		text-align: right;
+		li {
+			display: block;
+			margin-top: 10px;
+			margin-left: 0;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
 .intro {
 	padding: 0;
 	position: relative;
@@ -200,16 +2090,14 @@ body, html {
 			left: 0;
 			top: 0;
 		}
-		@media (max-width: 767px) {
-			display: none;
-		}
 	}
 	header {
 		position: relative;
 		height: 86px;
-		border-bottom: 1px solid rgba(255,255,255, .45);
-		background-color: #ffffff;
-		@include transition(background-color 1s $animation);
+		border-bottom: 1px solid $white_45;
+		background-color: $white;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: background-color 1s cubic-bezier(0.25, 0.8, 0.25, 1);
 		.container {
 			height: 86px;
 			.hamburger {
@@ -219,87 +2107,42 @@ body, html {
 				top: 50%;
 				right: 0;
 				margin-top: -28px;
-
-				@media (max-width: 991px) {
-					visibility: visible;
-					opacity: 1;
-					z-index: 120;
-				}
 			}
 			.logo {
 				position: absolute;
 				top: 12px;
 			}
 			nav {
-			position: absolute;
-			bottom: 10px;
-			right: 15px;
-			display: inline-block;
-				ul {
-					li {
-						display: inline;
-						margin-left: 20px;
-						a {
-							position: relative;
-							font-size: 14px;
-							text-transform: uppercase;
-							color: #333333;
-							font-weight: 600;
-							@include transition(color .3s $animation);
-							&:hover {
-								color: $orange;
-							}
-							@media (max-width: 991px) {
-								color: #fff;
-							}
-						}
-						&.active {
-							a {
-								color: $orange;
-								&:before {
-									visibility: visible;
-									background-color: $orange;
-									@include transform(scaleX(1));
-								}
-							}
-						}
-						&:first-child {
-							margin-left: 0;
+				position: absolute;
+				bottom: 10px;
+				right: 15px;
+				display: inline-block;
+				ul li {
+					display: inline;
+					margin-left: 20px;
+					a {
+						position: relative;
+						font-size: 14px;
+						text-transform: uppercase;
+						color: $color_mine_shaft_approx;
+						font-weight: 600;
+						//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+						transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+						&:hover {
+							color: $color_tall_poppy_approx;
 						}
 					}
-				}
-				@media (max-width: 991px) {
-					display: table;
-					visibility: hidden;
-					opacity: 0;
-					position: fixed;
-					top: 0;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					width: 100%;
-					height: 100%;
-					text-align: center;
-					background-color: #000000;
-					ul {
-						display: table-cell;
-						vertical-align: middle;
-						li {
-							display: block;
-							margin-left: 0;
-							a {
-								font-size: 35px;
-							}
-							&.common {
-								margin-top: 20px;
-								margin-left: 0;
-							}
-						}
+					&:first-child {
+						margin-left: 0;
 					}
-					&.active {
-						visibility: visible;
-						opacity: 1;
-						z-index: 110;
+					&.active a {
+						color: $color_tall_poppy_approx;
+						&:before {
+							visibility: visible;
+							background-color: $color_tall_poppy_approx;
+							//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+							transform: scaleX(1);
+						}
 					}
 				}
 			}
@@ -310,11 +2153,9 @@ body, html {
 			left: 0;
 			width: 100%;
 			z-index: 1400;
-			@include box-shadow(0 0 10px rgba(00,00,00, .5));
-			@include animation(sticky-header 1s $animation normal);
-		}
-		@media (max-width: 991px) {
-			background-color: rgba(00,00,00, .8);
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 0 10px $black_50;
+			animation: sticky-header 1s cubic-bezier(0.25, 0.8, 0.25, 1) normal;
 		}
 	}
 	.intro-links {
@@ -325,69 +2166,47 @@ body, html {
 			margin-bottom: 20px;
 			font-size: 30px;
 			text-transform: uppercase;
-			color: #fff;
-			@include text-shadow(1px 1px 5px #000);
+			color: $white;
+			//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			text-shadow: 1px 1px 5px $black;
 		}
-		ul {
-			li {
-				display: inline-block;
-				margin-left: 20px;
-				a {
-					padding: 10px 20px;
-					font-size: 20px;
-					text-transform: uppercase;
-					color: #fff;
-					background-color: rgba(00,00,00, .8);
-					@include border-radius(8px);
-					@include transition(color .3s $animation, background-color .3s $animation);
-					&:hover {
-						color: #000;
-						background-color: rgba(204,102,0, .8);
-					}
-				}
-				&:first-child {
-					margin-left: 0;
+		ul li {
+			display: inline-block;
+			margin-left: 20px;
+			a {
+				padding: 10px 20px;
+				font-size: 20px;
+				text-transform: uppercase;
+				color: $white;
+				background-color: $black_80;
+				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+				border-radius: 8px;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+				&:hover {
+					color: $black;
+					background-color: $color_red_stage_80_approx;
 				}
 			}
-		}
-		@media (max-width: 767px) {
-			display: none;
-		}
-	}
-}
-
-.banners {
-	.item {
-		position: relative;
-		h2 {
-			position: absolute;
-			top: 0;
-			margin-bottom: 10px;
-			padding: 5px 10px;
-			width: 100%;
-			font-size: 20px;
-			font-weight: normal;
-			text-transform: uppercase;
-			color: #fff;
-			background-color: rgba(00,00,00,.5);
-		}
-		p {
-			margin-top: 20px;
-			font-size: 16px;
-			color: #666666;
-		}
-	}
-	@media (max-width: 767px) {
-		margin-top: 30px;
-		text-align: center;
-		.item {
-			margin-top: 40px;
+			&:first-child {
+				margin-left: 0;
+			}
 		}
 	}
 }
-
 .welcome {
-	background-color: #fff;
+	position: relative;
+	background-image: $url_5;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	p {
+		color: $white;
+		margin-top: 20px;
+		font-size: 18px;
+		line-height: 34px;
+	}
 	.container {
 		position: relative;
 		.owl-welcome-arrows {
@@ -397,8 +2216,9 @@ body, html {
 			width: 100%;
 			span {
 				font-size: 100px;
-				color: #333;
-				@include transition(color .3s $animation);
+				color: $color_mine_shaft_approx;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 				&.icon-site-arrow-left {
 					position: relative;
 					left: -50px;
@@ -411,129 +2231,214 @@ body, html {
 				}
 				&:hover {
 					cursor: pointer;
-					color: $orange;
+					color: $color_tall_poppy_approx;
 				}
-			}
-			@media (max-width: 1024px) {
-				display: none;
 			}
 		}
 	}
 	h3 {
 		font-size: 28px;
-		color: $orange;
+		color: $color_tall_poppy_approx;
 	}
-	p {
+	.owl-welcome-pagination ul {
+		display: block;
 		margin-top: 20px;
-		font-size: 18px;
-		line-height: 34px;
-	}
-	.owl-welcome-pagination {
-		ul {
-			display: block;
-			margin-top: 20px;
-			text-align: center;
-			li {
-				display: inline-block;
-				margin-left: 10px;
-				width: 15px;
-				height: 15px;
-				background-color: #333;
-				@include border-radius(50%);
-				&:hover {
-					cursor: pointer;
-				}
-				&.active {
-					background-color: $orange;
-				}
-				&:first-child {
-					margin-left: 0;
-				}
+		text-align: center;
+		li {
+			display: inline-block;
+			margin-left: 10px;
+			width: 15px;
+			height: 15px;
+			background-color: $color_mine_shaft_approx;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 50%;
+			&:hover {
+				cursor: pointer;
+			}
+			&.active {
+				background-color: $color_tall_poppy_approx;
+			}
+			&:first-child {
+				margin-left: 0;
 			}
 		}
 	}
 }
-
+.welcome::before {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: $black_75;
+}
+@media(max-width: 1024px) {
+	.welcome .container .owl-welcome-arrows {
+		display: none;
+	}
+	footer ul li {
+		margin-left: 10px;
+		a {
+			font-size: 12px;
+		}
+	}
+}
 .services {
 	text-align: center;
 	h2 {
 		margin-bottom: 20px;
-		font-size: 30px;
-		color: $orange;
+		font-size: 40px;
+		color: $color_tall_poppy_approx;
 		text-transform: uppercase;
 	}
 	ul {
 		text-align: left;
-		-moz-column-count: 2;
-		-moz-column-gap: 50px;
-		-moz-column-fill: auto;
-		-webkit-column-count: 2;
-		-webkit-column-gap: 50px;
-		-webkit-column-fill: auto;
+		//Instead of the line below you could use @include column-count($count)
 		column-count: 2;
+		//Instead of the line below you could use @include column-gap($width)
 		column-gap: 50px;
 		column-fill: auto;
 		li {
+			display: flex;
+			align-items: baseline;
 			margin-bottom: 10px;
-			font-size: 24px;
+			font-size: 20px;
+			i {
+				margin-right: 10px;
+				color: $color_tall_poppy_approx;
+			}
 			span {
 				display: inline-block;
 				margin-right: 5px;
 				font-size: 20px;
 				font-weight: bold;
-				color: $orange;
+				color: $color_tall_poppy_approx;
 			}
-		}
-		@media (max-width: 667px) {
-			-moz-column-count: 1;
-			column-count: 1;
-			text-align: center;
 		}
 	}
 }
-
+@media(max-width: 667px) {
+	.services ul {
+		//Instead of the line below you could use @include column-count($count)
+		column-count: 1;
+	}
+	.info ul {
+		//Instead of the line below you could use @include column-count($count)
+		column-count: 1;
+	}
+}
 .gallery {
-	background-color: #f1f1f1;
+	background-color: $seashell;
 	h2 {
 		margin-bottom: 20px;
 		font-size: 30px;
-		color: $orange;
+		color: $color_tall_poppy_approx;
 		text-transform: uppercase;
+		text-align: center;
+	}
+	ul {
+		margin-top: 40px;
+		&:before {
+			content: " ";
+			display: table;
+		}
+		&:after {
+			content: " ";
+			display: table;
+			clear: both;
+		}
+		li {
+			position: relative;
+			display: block;
+			float: left;
+			padding: 20px;
+			width: 33.3%;
+			font-size: 20px;
+			color: $white;
+			text-align: center;
+			text-transform: uppercase;
+			background-color: $black;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+			&:before {
+				content: '';
+				position: absolute;
+				visibility: hidden;
+				display: block;
+				width: 100%;
+				height: 5px;
+				left: 0;
+				bottom: 0;
+				background-color: $color_tall_poppy_approx;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: scaleX(0);
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+			}
+			&:hover {
+				cursor: pointer;
+				color: $color_tall_poppy_approx;
+			}
+			&.active:before {
+				visibility: visible;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: scaleX(1);
+			}
+		}
 	}
 }
-
 .contact {
 	h2 {
 		font-size: 30px;
-		color: $orange;
+		color: $color_tall_poppy_approx;
 		text-transform: uppercase;
 		text-align: center;
 	}
 	form {
 		margin-top: 40px;
-		input, textarea {
+		input {
 			padding: 15px;
 			width: 100%;
-			border: 2px solid $orange;
-			background-color: #f1f1f1;
-			@include border-radius(8px);
-			@include transition(background-color .3s $animation);
-			&:hover, &:focus {
+			border: 2px solid $color_tall_poppy_approx;
+			background-color: $seashell;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 8px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+			margin-top: 20px;
+			height: 45px;
+			&:hover {
 				outline: 0;
 			}
 			&:focus {
-				background-color: #fff;
+				outline: 0;
+				background-color: $white;
 			}
-		}
-		input {
-			margin-top: 20px;
-			height: 45px;
 			&:first-child {
 				margin-top: 0;
 			}
 		}
 		textarea {
+			padding: 15px;
+			width: 100%;
+			border: 2px solid $color_tall_poppy_approx;
+			background-color: $seashell;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 8px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 			height: 175px;
+			&:hover {
+				outline: 0;
+			}
+			&:focus {
+				outline: 0;
+				background-color: $white;
+			}
 		}
 		.col-sm-12 {
 			text-align: center;
@@ -543,103 +2448,37 @@ body, html {
 				padding: 10px 20px;
 				font-size: 16px;
 				text-transform: uppercase;
-				color: #fff;
-				background-color: #000;
-				@include border-radius(8px);
-				@include transition(background-color .3s $animation, color .3s $animation);
+				color: $white;
+				background-color: $black;
+				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+				border-radius: 8px;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 				&:hover {
-					color: #000;
-					background-color: $orange;
+					color: $black;
+					background-color: $color_tall_poppy_approx;
 				}
 			}
 		}
 	}
-	@media (max-width: 767px) {
-		form {
-			textarea {
-				margin-top: 20px;
-			}
-		}
-	}
 }
-
 .map {
 	h2 {
 		margin-bottom: 20px;
 		font-size: 30px;
-		color: $orange;
+		color: $color_tall_poppy_approx;
 		text-transform: uppercase;
 		text-align: center;
 	}
 	#map {
-	  width: 100%;
-	  height: 600px;
+		width: 100%;
+		height: 600px;
 	}
 }
-
-footer {
-	padding: 40px 0;
-	background-color: #000;
-	p {
-		margin-top: 20px;
-	}
-	ul {
-		li {
-			display: inline-block;
-			margin-left: 10px;
-			a {
-				text-transform: uppercase;
-				@include transition(color .3s $animation);
-				&:hover {
-					color: $orange;
-				}
-			}
-			&:first-child {
-				margin-left: 0;
-			}
-		}
-	}
-	p, ul li a {
-		color: #fff;
-	}
-	@media (max-width: 1024px) {
-		ul {
-			li {
-				margin-left: 10px;
-				a {
-					font-size: 12px;
-				}
-			}
-		}
-	}
-	@media (max-width: 991px) {
-		ul {
-			float: right;
-			text-align: right;
-			li {
-				display: block;
-				margin-top: 10px;
-				margin-left: 0;
-				&:first-child {
-					margin-top: 0;
-				}
-			}
-		}
-	}
-	@media (max-width: 767px) {
-		text-align: center;
-		ul {
-			margin-top: 40px;
-			float: none;
-			text-align: center;
-		}
-	}
-}
-
 .info {
 	h2 {
 		font-size: 30px;
-		color: $orange;
+		color: $color_tall_poppy_approx;
 		text-transform: uppercase;
 		text-align: center;
 		&.sub {
@@ -650,7 +2489,7 @@ footer {
 		margin: 30px 0 15px;
 		font-size: 24px;
 		font-weight: 600;
-		color: #000;
+		color: $black;
 	}
 	p {
 		margin-top: 20px;
@@ -658,122 +2497,25 @@ footer {
 		line-height: 30px;
 	}
 	ul {
-		-moz-column-count: 2;
-		-moz-column-gap: 20px;
-		-moz-column-fill: auto;
-		-webkit-column-count: 2;
-		-webkit-column-gap: 20px;
-		-webkit-column-fill: auto;
+		//Instead of the line below you could use @include column-count($count)
 		column-count: 2;
+		//Instead of the line below you could use @include column-gap($width)
 		column-gap: 20px;
 		column-fill: auto;
 		li {
+			display: flex;
+			align-items: baseline;
 			font-size: 20px;
 			span {
 				display: inline-block;
 				margin-right: 5px;
 				font-size: 20px;
 				font-weight: bold;
-				color: $orange;
-			}
-		}
-		@media (max-width: 667px) {
-			-moz-column-count: 1;
-			column-count: 1;
-			text-align: center;
-		}
-	}
-	@media (max-width: 767px) {
-		margin-top: 70px;
-	}
-}
-
-.gallery {
-	h2 {
-		font-size: 30px;
-		color: $orange;
-		text-transform: uppercase;
-		text-align: center;
-	}
-	ul {
-		margin-top: 40px;
-		@include clearfix();
-		li {
-			position: relative;
-			display: block;
-			float: left;
-			padding: 20px;
-			width: 33.3%;
-			font-size: 20px;
-			color: #fff;
-			text-align: center;
-			text-transform: uppercase;
-			background-color: #000;
-			@include transition(color .3s $animation);
-			&:before {
-				content: '';
-				position: absolute;
-				visibility: hidden;
-				display: block;
-				width: 100%;
-				height: 5px;
-				left: 0;
-				bottom: 0;
-				background-color: $orange;
-				@include transform(scaleX(0));
-				@include transition(transform .3s $animation, visibility .3s $animation);
-			}
-			&:hover {
-				cursor: pointer;
-				color: $orange;
-			}
-			&.active {
-				&:before {
-					visibility: visible;
-					@include transform(scaleX(1));
-				}
-			}
-		}
-	}
-	@media (max-width: 767px) {
-		ul {
-			li {
-				float: none;
-				width: 100%;
-				padding: 5px;
-			}
-		}
-		.my-gallery {
-			figure {
-				display: none;
-				padding: 0;
-				&.mobile-thumb {
-					display: block;
-					width: 100%;
-					.mobile-label {
-						position: absolute;
-						top: 50%;
-						display: block;
-						margin-top: -20px;
-						padding: 10px;
-						width: 100%;
-						font-size: 20px;
-						font-weight: 700;
-						line-height: 20px;
-						color: $orange;
-						text-transform: uppercase;
-						text-align: center;
-						background-color: rgba(00,00,00,0.8);
-						&:hover {
-							cursor: pointer;
-						}
-					}
-				}
+				color: $color_tall_poppy_approx;
 			}
 		}
 	}
 }
-
 .my-gallery {
 	figure {
 		margin-top: 40px;
@@ -781,4 +2523,32 @@ footer {
 	.mobile-label {
 		display: none;
 	}
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+.banners .item {
+	position: relative;
+	h2 {
+		position: absolute;
+		top: 0;
+		margin-bottom: 10px;
+		padding: 5px 10px;
+		width: 100%;
+		font-size: 20px;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: $white;
+		background-color: $black_50;
+	}
+	p {
+		margin-top: 20px;
+		font-size: 16px;
+		color: $color_black_approx;
+	}
+}
+
+#caja-DATAFISCAL {
+	display: inline-block;
+	margin-top: 20px;
 }

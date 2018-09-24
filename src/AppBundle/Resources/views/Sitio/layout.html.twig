@@ -109,10 +109,11 @@
 		<div class="sub-header">
 			<div class="container">
 				<ul class="social">
-					<li><a href="https://www.facebook.com/pages/CABAÑAS-PIHUE-LAS-GAVIOTAS/103786939263" target="_blank"><span class="icon-site-facebook"></span></li></a>
+					<li><a href="https://www.facebook.com/pages/CABAÑAS-PIHUE-LAS-GAVIOTAS/103786939263" target="_blank"><i class="fab fa-facebook-f"></i></li></a>
 					<!--<li><a href=""><span class="icon-site-twitter"></span></li></a>
 					<li><a href="" target="_blank"><span class="icon-site-google-plus"></span></li></a>-->
-					<li><a href="https://www.instagram.com/cabaniaspihue/" target="_blank"><span class="icon-site-instagram"></span></li></a>
+					<li><a href="https://www.instagram.com/cabaniaspihue/" target="_blank"><i class="fab fa-instagram"></i></li></a>
+					<li><a href="https://wa.me/5492267419940" target="_blank"><i class="fab fa-whatsapp"></i></li></a>
 				</ul>
 				<ul class="numbers">
 					<li><span class="icon-site-cel"></span> (02267) 15 41-9940</li>
@@ -160,15 +161,23 @@
 				</div>
 				<div class="col-sm-8">
 					<ul>
-						<li><a>Inicio</a></li>
-						<li><a>Cabañas</a></li>
-						<li><a>Suites</a></li>
-						<li><a>Servicios</a></li>
-						<li><a>Galería de fotos</a></li>
-						<li><a>Nuestros amigos</a></li>
-						<li><a>Ubicación</a></li>
-						<li><a>Contacto</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#intro"{% else %}href="{{ path('homepage') }}#intro"{% endif %}>Inicio</a></li>
+						<li><a href="{{ path('cabanas') }}">Cabañas</a></li>
+						<li><a href="{{ path('suites') }}">Suites</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#services"{% else %}href="{{ path('homepage') }}#services"{% endif %}>Servicios</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#gallery"{% else %}href="{{ path('homepage') }}#gallery"{% endif %}>Galería de fotos</a></li>
+						<li><a href="{{ path('amigos') }}">Nuestros amigos</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#ubicacion"{% else %}href="{{ path('homepage') }}#ubicacion"{% endif %}>Ubicación</a></li>
+						<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#contact"{% else %}href="{{ path('homepage') }}#contact"{% endif %}>Contacto</a></li>
 					</ul>
+					<ul class="social">
+						<li><a href="https://www.facebook.com/pages/CABAÑAS-PIHUE-LAS-GAVIOTAS/103786939263" target="_blank"><i class="fab fa-facebook-f"></i></li></a>
+						<!--<li><a href=""><span class="icon-site-twitter"></span></li></a>
+						<li><a href="" target="_blank"><span class="icon-site-google-plus"></span></li></a>-->
+						<li><a href="https://www.instagram.com/cabaniaspihue/" target="_blank"><i class="fab fa-instagram"></i></li></a>
+						<li><a href="https://wa.me/5492267419940" target="_blank"><i class="fab fa-whatsapp"></i></li></a>
+					</ul>
+					<div id="caja-DATAFISCAL"> <a href="http://qr.afip.gob.ar/?qr=zdOcK00eqIQ03eu-a_9khw,," target="_F960AFIPInfo"><img src="/bundles/app/images/layout/DATAWEB.gif" border="0"></a></div>
 				</div>
 			</div>
 		</div>
