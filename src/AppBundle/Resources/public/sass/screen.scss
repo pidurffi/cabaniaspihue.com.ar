@@ -1748,76 +1748,6 @@ input[type="search"]::-webkit-search-decoration {
 		}
 	}
 }
-@media(max-width: 767px) {
-	section {
-		padding: 20px 0;
-	}
-	.sub-header {
-		display: none;
-	}
-	.intro {
-		.slider {
-			display: none;
-		}
-		.intro-links {
-			display: none;
-		}
-	}
-	.banners {
-		margin-top: 30px;
-		text-align: center;
-		.item {
-			margin-top: 40px;
-		}
-	}
-	footer {
-		text-align: center;
-		ul {
-			margin-top: 40px;
-			float: none;
-			text-align: center;
-		}
-	}
-	.info {
-		margin-top: 70px;
-	}
-	.gallery {
-		ul li {
-			float: none;
-			width: 100%;
-			padding: 5px;
-		}
-		.my-gallery figure {
-			display: none;
-			padding: 0;
-			&.mobile-thumb {
-				display: block;
-				width: 100%;
-				.mobile-label {
-					position: absolute;
-					top: 50%;
-					display: block;
-					margin-top: -20px;
-					padding: 10px;
-					width: 100%;
-					font-size: 20px;
-					font-weight: 700;
-					line-height: 20px;
-					color: $color_tall_poppy_approx;
-					text-transform: uppercase;
-					text-align: center;
-					background-color: $black_80;
-					&:hover {
-						cursor: pointer;
-					}
-				}
-			}
-		}
-	}
-	.contact form textarea {
-		margin-top: 20px;
-	}
-}
 @-moz-keyframes breath {
 	0% {
 		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
@@ -2012,68 +1942,6 @@ input[type="search"]::-webkit-search-decoration {
 		background-image: $url_4;
 	}
 }
-@media(max-width: 991px) {
-	header .logo {
-		background-image: $url_1;
-	}
-	.intro header {
-		background-color: $black_80;
-		.container {
-			.hamburger {
-				visibility: visible;
-				opacity: 1;
-				z-index: 120;
-			}
-			nav {
-				display: table;
-				visibility: hidden;
-				opacity: 0;
-				position: fixed;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				text-align: center;
-				background-color: $black;
-				ul {
-					display: table-cell;
-					vertical-align: middle;
-					li {
-						display: block;
-						margin-left: 0;
-						a {
-							color: $white;
-							font-size: 35px;
-						}
-						&.common {
-							margin-top: 20px;
-							margin-left: 0;
-						}
-					}
-				}
-				&.active {
-					visibility: visible;
-					opacity: 1;
-					z-index: 110;
-				}
-			}
-		}
-	}
-	footer ul {
-		float: right;
-		text-align: right;
-		li {
-			display: block;
-			margin-top: 10px;
-			margin-left: 0;
-			&:first-child {
-				margin-top: 0;
-			}
-		}
-	}
-}
 .intro {
 	padding: 0;
 	position: relative;
@@ -2192,6 +2060,138 @@ input[type="search"]::-webkit-search-decoration {
 				margin-left: 0;
 			}
 		}
+	}
+}
+@media(max-width: 991px) {
+	header .logo {
+		background-image: $url_1;
+	}
+	.intro header {
+		background-color: $black_80;
+		.container {
+			.hamburger {
+				visibility: visible;
+				opacity: 1;
+				z-index: 120;
+			}
+			nav {
+				display: table;
+				visibility: hidden;
+				opacity: 0;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				background-color: $black;
+				ul {
+					display: table-cell;
+					vertical-align: middle;
+					li {
+						display: block;
+						margin-left: 0;
+						a {
+							color: $white;
+							font-size: 35px;
+						}
+						&.common {
+							margin-top: 20px;
+							margin-left: 0;
+						}
+					}
+				}
+				&.active {
+					visibility: visible;
+					opacity: 1;
+					z-index: 110;
+				}
+			}
+		}
+	}
+	footer ul {
+		float: right;
+		text-align: right;
+		li {
+			display: block;
+			margin-top: 10px;
+			margin-left: 0;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+@media(max-width: 767px) {
+	section {
+		padding: 20px 0;
+	}
+	.sub-header {
+		display: none;
+	}
+	.intro {
+		.slider {
+			display: none;
+		}
+		.intro-links {
+			display: none;
+		}
+	}
+	.banners {
+		margin-top: 30px;
+		text-align: center;
+		.item {
+			margin-top: 40px;
+		}
+	}
+	footer {
+		text-align: center;
+		ul {
+			margin-top: 40px;
+			float: none;
+			text-align: center;
+		}
+	}
+	.info {
+		margin-top: 70px;
+	}
+	.gallery {
+		ul li {
+			float: none;
+			width: 100%;
+			padding: 5px;
+		}
+		.my-gallery figure {
+			display: none;
+			padding: 0;
+			&.mobile-thumb {
+				display: block;
+				width: 100%;
+				.mobile-label {
+					position: absolute;
+					top: 50%;
+					display: block;
+					margin-top: -20px;
+					padding: 10px;
+					width: 100%;
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 20px;
+					color: $color_tall_poppy_approx;
+					text-transform: uppercase;
+					text-align: center;
+					background-color: $black_80;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	.contact form textarea {
+		margin-top: 20px;
 	}
 }
 .welcome {
