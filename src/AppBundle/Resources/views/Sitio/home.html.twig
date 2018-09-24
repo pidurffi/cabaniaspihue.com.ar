@@ -66,15 +66,15 @@
 	<section class="contact" id="contact">
 		<div class="container">
 			<h2>Contacto</h2>
-			<form action="">
+			<form  id="form_contacto" method="post" onsubmit="return validar_form();">
 				<div class="row">
 					<div class="col-sm-6">
-						<input type="text" placeholder="Nombre">
-						<input type="text" placeholder="Telefono">
-						<input type="text" placeholder="Email">
+						<input type="text" placeholder="Nombre" required="required" id="form_nombre">
+						<input type="email" placeholder="Mail" required="required" id="form_email">
+						<input type="text" placeholder="Teléfono" required="required" id="form_telefono">
 					</div>
 					<div class="col-sm-6">
-						<textarea placeholder="Comentario"></textarea>
+						<textarea placeholder="Comentario" id="form_mensaje"></textarea>
 					</div>
 					<div class="col-sm-12">
 						<a href="" class="send">Enviar</a>
